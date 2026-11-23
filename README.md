@@ -112,5 +112,5 @@ NAT overload (`PAT`) translates private internal IP addresses (`192.168.10.0/24`
 
 End-to-end verification tests confirm that the full lab works together: reaching the default gateway and internal server (`VLAN 30`) validates local and inter-VLAN routing, pinging the simulated Internet server (`198.51.100.10`) validates NAT/WAN reachability, and a blocked cross-VLAN ping confirms ACL enforcement.
 
-![Connectivity and Troubleshooting](screenshots/08-connectivity-and-troubleshooting.png)
-![Connectivity and Troubleshooting](screenshots/08-connectivity-adn-troubleshooting2.png)
+![Connectivity and Troubleshooting](screenshots/08-Connectivity-and-troubleshooting.png)
+![Connectivity and Troubleshooting](screenshots/08-Connectivity-and-troubleshooting2.png)
