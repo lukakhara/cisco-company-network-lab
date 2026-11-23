@@ -45,7 +45,7 @@ Used commands such as:
 - `screenshots/` — Network topology and configuration screenshots.
 
 # Cisco Packet Tracer Enterprise Lab (VLANs, Routing, ACLs, NAT & SSH)
-## Complete network topology**
+## Complete network topology
 ![Network Topology](screenshots/01-network-topology.png)
 
 ## Addressing Overview
