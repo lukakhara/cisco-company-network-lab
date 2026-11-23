@@ -28,7 +28,7 @@ The network consists of the following components:
 
 
 # Cisco Packet Tracer Enterprise Lab (VLANs, Routing, ACLs, NAT & SSH)
-## network topology
+## Network Topology
 ![Network Topology](screenshots/01-network-topology.png)
 
 ## IP Addressing Scheme
@@ -45,27 +45,29 @@ The network consists of the following components:
 ## 2. VLAN Configuration
 
 VLANs are used to logically segment the network into separate broadcast domains, isolating administrative workstations, technical support workstations, and servers. Communication between VLANs is handled by inter-VLAN routing configured on router R1 using the Router-on-a-Stick architecture.
-Administration VLAN configuration:
+Administration.
+
+VLAN configuration:
 ![VLAN Configuration](screenshots/02-admin-vlan.png)
 Technical Support VLAN configuration:
 ![VLAN Configuration](screenshots/02-support-vlan.png)
 Servers VLAN configuration:
 ![VLAN Configuration](screenshots/02-server-vlan.png)
-<!-- Optional separate trunk capture: ![Trunk Interfaces](screenshots/02-trunk-interfaces.png) -->
-
 ---
 
 ## 3. DHCP Configuration
 
 DHCP automatically assigns IPv4 addresses, subnet masks, and default gateways to client devices in **ADMIN** (`VLAN 10`) and **SUPPORT** (`VLAN 20`) instead of requiring manual static setup on every workstation. Configuring separate pools with each VLAN's gateway (`192.168.10.1` and `192.168.20.1`) and DHCP pools are configured with the appropriate network addresses, subnet masks, default gateways, and DNS server settings to ensure clients receive valid network configurations.
+
 DHCP configuration:
 ![DHCP Configuration](screenshots/03-dhcp-configuration.png)
-
 ---
+
 
 ## 4. DNS Configuration
 
 The internal DNS service resolves friendly hostnames to IP addresses across the lab so devices can reach local services by name rather than memorizing numeric addresses. Enabling DNS and creating an `A` record mapping `company.local` to `192.168.30.10` verifies local name resolution.
+
 DNS server configuration:
 ![DNS Configuration](screenshots/04-DNS-config-server.png)
 Testing hostname resolution using the configured DNS record:
@@ -84,6 +86,7 @@ Testing inter-VLAN access restrictions:
 ## 6. SSH Remote Management
 
 SSH version 2 is configured to provide encrypted remote access to network devices. Local user authentication is enabled, and Telnet access is disabled on the VTY lines. Remote management is tested by establishing SSH connections from a workstation to the router and switches.
+
 Testing SSH access to the router:
 ![SSH Remote Management](screenshots/06-ssh-router-connecting.png)
 Testing SSH access to the switch:
@@ -93,6 +96,7 @@ Testing SSH access to the switch:
 ## 7. NAT Configuration
 
 NAT overload (`PAT`) translates private internal IP addresses (`192.168.10.0/24`, `192.168.20.0/24`, and `192.168.30.0/24`) to `R1`'s outside WAN IP (`203.0.133.2`) NAT Overload (PAT) is configured on router R1 to translate private internal IP addresses into the router's public-facing WAN address (203.0.133.2). This allows devices from the internal VLANs to communicate with external networks through the simulated ISP connection. NAT translations are verified using Cisco IOS show commands.
+
 NAT configuration:
 ![NAT Configuration](screenshots/07-NAT-config-router.png)
 Verifying NAT translations and connectivity to the simulated Internet server:
