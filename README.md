@@ -43,3 +43,18 @@ Used commands such as:
 ## Files
 - `Georgian_AirLink_Network_Lab.pkt` — Cisco Packet Tracer project file.
 - `screenshots/` — Network topology and configuration screenshots.
+
+# Cisco Packet Tracer Enterprise Lab (VLANs, Routing, ACLs, NAT & SSH)
+
+![Network Topology](screenshots/network-topology.png)
+
+## Addressing Overview
+
+| Device / Segment | Interface / VLAN | IP Address / Subnet | Notes |
+| :--- | :--- | :--- | :--- |
+| **ADMIN** | `VLAN 10` | `192.168.10.0/24` (GW `192.168.10.1`) | Restricted from `SUPPORT` via ACL `110` |
+| **SUPPORT** | `VLAN 20` | `192.168.20.0/24` (GW `192.168.20.1`) | Workstation segment |
+| **SERVERS** | `VLAN 30` | `192.168.30.0/24` (GW `192.168.30.1`) | Internal server (`192.168.30.10`) and switch management |
+| **R1 WAN / ISP-R1** | `Gi0/1` -> `ISP-R1` | `203.0.133.2` -> `203.0.133.1` | Default route and NAT overload (`PAT`) outside |
+| **INTERNET-SERVER** | Simulated WAN | `198.51.100.10` | External reachability and NAT target |
+
